@@ -11,6 +11,9 @@ using System.Windows.Controls;
 
 namespace QUIZTIME2
 {
+
+    //dit is een vraag
+
     class Question
     {
         private string _ID;
