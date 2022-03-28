@@ -1,0 +1,62 @@
+﻿<Window x:Class="QUIZTIME2._0.quizGrid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QUIZTIME2._0"
+        mc:Ignorable="d"
+        Title="quizGrid" Height="450" Width="800">
+    <Grid Height="700" Width="800" Background="#FFD1F9EE">
+        <TextBlock Height="32" HorizontalAlignment="Left" Margin="16,15,0,0" Name="textBlockHeading" Text="Vragen" VerticalAlignment="Top" Width="310" FontSize="20" FontStretch="Normal" />
+        <Grid HorizontalAlignment="Left" Height="585" VerticalAlignment="Top" Width="778" Margin="10,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="207*"/>
+                <ColumnDefinition Width="428*"/>
+            </Grid.ColumnDefinitions>
+            <DataGrid Name="dgQuiz" AutoGenerateColumns="False" 
+                                         HorizontalAlignment="Left" 
+                                         HorizontalScrollBarVisibility="Disabled" 
+                                         Margin="0,46,0,216" 
+                                         Width="778" 
+                                         ItemsSource="{Binding Path=LoadDataBinding}" 
+                                         CanUserResizeRows="False"
+                                         CanUserAddRows="False" Grid.ColumnSpan="2">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Path=ID}" Header="ID" Width="25" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=Naam}" Header="Naam" Width="200" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=Datum}" Header="Datum" Width="200" IsReadOnly="True" />
+                    
+
+                    <DataGridTemplateColumn Width="50">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Edit" Click="btnEdit_Click" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width="50">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Delete" Click="btnDelete_Click" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width="50">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Vragen" Tag="{Binding Path=ID}" Click="btnVragen"  />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Button Name="btnAdd" Content="Add" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="397,397,0,0"/>
+
+        </Grid>
+    </Grid>
+</Window>
