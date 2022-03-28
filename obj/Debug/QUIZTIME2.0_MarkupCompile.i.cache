@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\xampp\htdocs\QUIZTIME2.0\QUIZTIME2.0\App.xaml
-4257149942
+568548615
 
-121026247711
+13151922910
 128960139433
-MainWindow.xaml;questions.xaml;quizEdit.xaml;quizGrid.xaml;
+answersGrid.xaml;MainWindow.xaml;questions.xaml;quizEdit.xaml;quizGrid.xaml;
 
 True
 
