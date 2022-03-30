@@ -15,13 +15,64 @@ using System.Windows.Shapes;
 namespace QUIZTIME2._0
 {
     /// <summary>
-    /// Interaction logic for answersGrid.xaml
+    /// Interaction logic for questions.xaml
     /// </summary>
     public partial class answersGrid : Window
     {
-        public answersGrid()
+        Answer answer = new Answer();
+        public answersGrid(Button vraagID)
         {
             InitializeComponent();
+            dgAnswers.DataContext = answer.getData((int)vraagID.Tag);
+            btnAdd.Click += BtnAdd_Click;
+
+
         }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            answerEdit answerEdit = new answerEdit();
+            answerEdit.Show();
+            this.Close();
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                object item = dgAnswers.SelectedItem;
+                int ID = int.Parse((dgAnswers.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text);
+
+                answerEdit window = new answerEdit(ID);
+                window.Show();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                object item = dgAnswers.SelectedItem;
+                int ID = int.Parse((dgAnswers.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text);
+
+                if (answer.Delete(ID) == true)
+                {
+                    dgAnswers.DataContext = answer.getData_Delete();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+        }
+
+        
     }
 }

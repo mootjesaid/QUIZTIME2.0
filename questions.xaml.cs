@@ -74,5 +74,18 @@ namespace QUIZTIME2._0
                 return;
             }
         }
+
+        private void btn_Antwoorden(object sender, RoutedEventArgs e)
+        {
+            Button vraagID = (Button)sender;
+
+
+
+            answersGrid window = new answersGrid(vraagID);
+
+
+            window.Show();
+            this.Close();
+        }
     }
 }

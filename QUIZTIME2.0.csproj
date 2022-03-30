@@ -80,6 +80,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Answer.cs" />
+    <Compile Include="answerEdit.xaml.cs">
+      <DependentUpon>answerEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="answersGrid.xaml.cs">
       <DependentUpon>answersGrid.xaml</DependentUpon>
     </Compile>
@@ -95,6 +99,10 @@
       <DependentUpon>quizGrid.xaml</DependentUpon>
     </Compile>
     <Compile Include="SQL.cs" />
+    <Page Include="answerEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="answersGrid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
