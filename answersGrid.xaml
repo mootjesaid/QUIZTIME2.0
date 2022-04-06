@@ -23,10 +23,10 @@
                                          CanUserAddRows="False" Grid.ColumnSpan="2">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Path=ID}" Header="ID" Width="25" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=Antwoord}" Header="Naam" Width="200" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=Order}" Header="Datum" Width="200" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=Correct}" Header="Datum" Width="200" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=tblvragen_id}" Header="Datum" Width="200" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=Antwoord}" Header="Vraag" Width="200" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=Getal}" Header="Getal" Width="200" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=Correct}" Header="Correct" Width="200" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=tblvragen_id}" Header="tblvragen_id" Width="200" IsReadOnly="True" />
 
 
                     <DataGridTemplateColumn Width="50">

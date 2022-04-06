@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="quizGrid" Height="450" Width="800">
     <Grid Height="700" Width="800" Background="#FFD1F9EE">
-        <TextBlock Height="32" HorizontalAlignment="Left" Margin="16,15,0,0" Name="textBlockHeading" Text="Vragen" VerticalAlignment="Top" Width="310" FontSize="20" FontStretch="Normal" />
+        <TextBlock Height="32" HorizontalAlignment="Left" Margin="16,15,0,0" x:Name="textBlockHeading" VerticalAlignment="Top" Width="310" FontSize="20" FontStretch="Normal" ><Run Language="nl-nl" Text="Quiz"/><LineBreak/><Run Language="nl-nl"/><LineBreak/><Run Language="nl-nl"/></TextBlock>
         <Grid HorizontalAlignment="Left" Height="585" VerticalAlignment="Top" Width="778" Margin="10,0,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="207*"/>
@@ -23,10 +23,9 @@
                                          CanUserAddRows="False" Grid.ColumnSpan="2">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Path=ID}" Header="ID" Width="25" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=Antwoord}" Header="Naam" Width="200" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=Getal}" Header="Datum" Width="200" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=Correct}" Header="Datum" Width="200" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=tblvragen_id}" Header="Datum" Width="200" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=Naam}" Header="Naam" Width="200" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=Datum}" Header="Datum" Width="200" IsReadOnly="True" />
+
 
                     <DataGridTemplateColumn Width="50">
                         <DataGridTemplateColumn.CellTemplate>

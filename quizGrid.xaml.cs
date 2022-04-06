@@ -76,10 +76,8 @@ namespace QUIZTIME2._0
         private void btnVragen(object sender, RoutedEventArgs e)
         {
             Button quizID = (Button)sender;
-           
-            
-
-            questions window = new questions(quizID);
+            Button fk = (Button)sender;
+            questions window = new questions(quizID, fk);
 
 
             window.Show();

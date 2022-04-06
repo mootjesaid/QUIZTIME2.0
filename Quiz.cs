@@ -65,8 +65,8 @@ namespace QUIZTIME2
         public void Update(string ID, string naam)
         {
             string SQL = string.Format("Update dbquiztime.tblquiz " +
-                                       "Set Naam     = '{0}', " +
-                                       "WHERE ID =  {1}", naam,
+                                       "Set Naam     = '{0}' " +
+                                       "WHERE ID     = '{1}'", naam,
                                                           ID);
 
             sql.ExecuteNonQuery(SQL);

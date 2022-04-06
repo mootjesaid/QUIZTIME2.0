@@ -81,7 +81,7 @@ namespace QUIZTIME2
         }
         public void Read(Int32 ID)
         {
-            string SQL = string.Format("SELECT ID, Vraag, Afbeelding, tblquiz_ID FROM dbquiztime.tblvragen WHERE ID = {0}", ID);
+            string SQL = string.Format("SELECT ID, Vraag, Afbeelding, tblquiz_ID FROM dbquiztime.tbaaaa WHERE ID = {0}", ID);
             DataTable datatable = sql.getDataTable(SQL);
 
             _ID = datatable.Rows[0]["ID"].ToString();

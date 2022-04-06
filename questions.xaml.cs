@@ -20,21 +20,27 @@ namespace QUIZTIME2._0
     public partial class questions : Window
     {
         Question question = new Question();
-        public questions(Button quizID)
+        public questions(Button quizID, Button fk)
         {
             InitializeComponent();
             dgVragen.DataContext = question.getData((int)quizID.Tag);
             btnAdd.Click += BtnAdd_Click;
+            
+            
+
            
             
         }
 
-        
+       
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            quizEdit quizEdit = new quizEdit();
-            quizEdit.Show();
+
+          
+
+            questionEdit questionEdit = new questionEdit();
+            questionEdit.Show();
             this.Close();
         }
 
@@ -44,8 +50,9 @@ namespace QUIZTIME2._0
             {
                 object item = dgVragen.SelectedItem;
                 int ID = int.Parse((dgVragen.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text);
+               
 
-                quizEdit window = new quizEdit(ID);
+                questionEdit window = new questionEdit();
                 window.Show();
                 this.Close();
             }
@@ -81,10 +88,10 @@ namespace QUIZTIME2._0
 
 
 
-            answersGrid window = new answersGrid(vraagID);
+            answersGrid answersGrid = new answersGrid(vraagID);
 
 
-            window.Show();
+            answersGrid.Show();
             this.Close();
         }
     }

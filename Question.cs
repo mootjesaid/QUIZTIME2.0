@@ -26,7 +26,7 @@ namespace QUIZTIME2
             get { return _ID; }
             set { _ID = value; }
         }
-        public string naam
+        public string vraag
         {
             get { return _vraag; }
             set { _vraag = value; }
@@ -64,14 +64,25 @@ namespace QUIZTIME2
             return sql.getDataSet(SQL);
         }
 
+        
+
         //CRUD
-        public void Create(string vraag, string afbeelding)
+        public void Create(string vraag, string afbeelding, string tblquiz_ID)
+
+
         {
-            string SQL = string.Format("INSERT INTO dbquiztime.tblquiz (Vraag)(Afbeelding) VALUES ('{0}', '{1}')",
-                        vraag, afbeelding);
+            string SQL = string.Format("INSERT INTO dbquiztime.tblvragen (Vraag, Afbeelding, tblquiz_ID) VALUES ('{0}', '{1}', '{2}')",
+                         vraag, afbeelding, tblquiz_ID);
+
 
             sql.ExecuteNonQuery(SQL);
         }
+
+        internal object Create(int fk)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Read(Int32 ID)
         {
             string SQL = string.Format("SELECT ID, Vraag, Afbeelding, tblquiz_ID FROM dbquiztime.tblvragen WHERE ID = {0}", ID);
@@ -83,16 +94,17 @@ namespace QUIZTIME2
             _tblquizID = datatable.Rows[0]["tblquiz_ID"].ToString();
 
         }
-        public void Update(string vraag, string afbeelding, string ID)
+        public void Update(string id, string vraag, string afbeelding)
         {
             string SQL = string.Format("Update dbquiztime.tblvragen " +
-                                        "Set Vraag     = '{0}', " +
-                                                "Afbeelding = '{1}', " +
-                                       "WHERE ID     =  {2}", vraag,
-                                                              afbeelding,
-                                                              ID.ToString());
+                                      "Set Vraag      = '{0}', " +
+                                          "Afbeelding = '{1}' " +
+                                            "WHERE ID =  {2}", vraag,
+                                                               afbeelding,
+                                                               id.ToString());
             sql.ExecuteNonQuery(SQL);
-            // System.Windows.MessageBox.Show(customerName + " is geupdate");
+            //System.Windows.MessageBox.Show(id + " is geupdate");
+
         }
 
         public bool Delete(Int32 ID)

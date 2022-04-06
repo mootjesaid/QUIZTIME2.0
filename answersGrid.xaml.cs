@@ -41,7 +41,7 @@ namespace QUIZTIME2._0
             try
             {
                 object item = dgAnswers.SelectedItem;
-                int ID = int.Parse((dgAnswers.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text);
+                int ID = int.Parse((dgAnswers.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text);
 
                 answerEdit window = new answerEdit(ID);
                 window.Show();
