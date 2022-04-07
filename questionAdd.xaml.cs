@@ -17,41 +17,30 @@ namespace QUIZTIME2._0
     /// <summary>
     /// Interaction logic for quizEdit.xaml
     /// </summary>
-    public partial class questionEdit : Window
+    public partial class questionAdd : Window
     {
         Question question = new Question();
-        private Int32 _quizID;
+        private Int32 _ID;
 
-        public questionEdit()
+        public questionAdd()
         {
 
-          
-
             InitializeComponent();
-            
-            lblID.Visibility = Visibility.Hidden;
-            txbID.Visibility = Visibility.Hidden;
-            btnUpdate.Content = "Create";
-
             btnUpdate.Click += btnUpdate_Click;
             btnCancel.Click += btnCancel_Click;
         }
-        public questionEdit(Int32 ID)
+        public questionAdd(Int32 _quizID)
         {
 
             InitializeComponent();
-            question.Read(ID);
-           
-
-            txbID.Text = question.ID.ToString();
-            txbVraag.Text = question.vraag;
-            txbAfbeelding.Text = question.afbeelding;
-            txbquizID.Text = question.tblquizID.ToString();
-
-
+            _ID = _quizID;
+            txbquizID.Text = _ID.ToString();
+            lblID.Visibility = Visibility.Hidden;
+            txbID.Visibility = Visibility.Hidden;
+            lblQID.Visibility = Visibility.Hidden;
+            txbquizID.Visibility = Visibility.Hidden;
             btnUpdate.Click += btnUpdate_Click;
             btnCancel.Click += btnCancel_Click;
-            
         }
 
        
@@ -59,22 +48,13 @@ namespace QUIZTIME2._0
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
             
-
-            if (txbID.Text == string.Empty)
-            {
-
-                question.Create(txbVraag.Text, txbAfbeelding.Text, txbquizID.Text);
-            }
-            else
-            {
-                question.Update(txbID.Text,
-                                txbVraag.Text, txbAfbeelding.Text);
-            }
-
+            question.Create(txbVraag.Text, txbAfbeelding.Text, txbquizID.Text);
+            
             quizGrid questions = new quizGrid();
             questions.Show();
             this.Close();
         }
+
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             quizGrid window = new quizGrid();

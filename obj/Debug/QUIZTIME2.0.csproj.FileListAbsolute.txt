@@ -50,3 +50,5 @@ C:\xampp\htdocs\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\answerEdit.baml
 C:\xampp\htdocs\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\QUIZTIME2.0.csproj.SuggestedBindingRedirects.cache
 C:\xampp\htdocs\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\questionEdit.g.cs
 C:\xampp\htdocs\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\questionEdit.baml
+C:\xampp\htdocs\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\questionAdd.g.cs
+C:\xampp\htdocs\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\questionAdd.baml

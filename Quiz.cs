@@ -12,11 +12,11 @@ namespace QUIZTIME2
 {
     class Quiz
     {
-        private string _ID;
+        private Int32 _ID;
         private string _naam;
         private string _datum;
 
-        public string ID
+        public int ID
         {
             get { return _ID; }
             set { _ID = value; }
@@ -56,8 +56,7 @@ namespace QUIZTIME2
         {
             string SQL = string.Format("SELECT ID, Naam, Datum FROM dbquiztime.tblquiz WHERE ID = {0}", ID);
             DataTable datatable = sql.getDataTable(SQL);
-
-            _ID = datatable.Rows[0]["ID"].ToString();
+            _ID = Convert.ToInt32(datatable.Rows[0]["ID"].ToString());
             _naam = datatable.Rows[0]["Naam"].ToString();
             _datum = datatable.Rows[0]["Datum"].ToString();
 

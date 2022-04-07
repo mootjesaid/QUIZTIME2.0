@@ -57,5 +57,6 @@
             <Button Name="btnAdd" Content="Add" HorizontalAlignment="Left" Tag="{Binding Path=tblquiz_ID}"  VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="397,397,0,0"/>
 
         </Grid>
+        <TextBox Name="test" HorizontalAlignment="Left" Height="16" Margin="171,15,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
     </Grid>
 </Window>

@@ -16,12 +16,12 @@ namespace QUIZTIME2
 
     class Question
     {
-        private string _ID;
+        private Int32 _ID;
         private string _vraag;
         private string _afbeelding;
-        private string _tblquizID;
+        private Int32 _tblquizID;
 
-        public string ID
+        public Int32 ID
         {
             get { return _ID; }
             set { _ID = value; }
@@ -39,7 +39,7 @@ namespace QUIZTIME2
         }
 
 
-        public string tblquizID
+        public Int32 tblquizID
         {
             get { return _tblquizID; }
             set { _tblquizID = value; }
@@ -64,7 +64,7 @@ namespace QUIZTIME2
             return sql.getDataSet(SQL);
         }
 
-        
+
 
         //CRUD
         public void Create(string vraag, string afbeelding, string tblquiz_ID)
@@ -78,20 +78,17 @@ namespace QUIZTIME2
             sql.ExecuteNonQuery(SQL);
         }
 
-        internal object Create(int fk)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public void Read(Int32 ID)
         {
-            string SQL = string.Format("SELECT ID, Vraag, Afbeelding, tblquiz_ID FROM dbquiztime.tblvragen WHERE ID = {0}", ID);
+            string SQL = string.Format("SELECT ID, Vraag, Afbeelding, tblquiz_ID FROM dbquiztime.tblvragen WHERE tblquiz_ID = {0}", ID);
             DataTable datatable = sql.getDataTable(SQL);
 
-            _ID = datatable.Rows[0]["ID"].ToString();
+            _ID = Convert.ToInt32(datatable.Rows[0]["ID"].ToString());
             _vraag = datatable.Rows[0]["Vraag"].ToString();
             _afbeelding = datatable.Rows[0]["Afbeelding"].ToString();
-            _tblquizID = datatable.Rows[0]["tblquiz_ID"].ToString();
+            _tblquizID = Convert.ToInt32(datatable.Rows[0]["tblquiz_ID"].ToString());
 
         }
         public void Update(string id, string vraag, string afbeelding)

@@ -20,27 +20,26 @@ namespace QUIZTIME2._0
     public partial class questions : Window
     {
         Question question = new Question();
-        public questions(Button quizID, Button fk)
-        {
-            InitializeComponent();
-            dgVragen.DataContext = question.getData((int)quizID.Tag);
-            btnAdd.Click += BtnAdd_Click;
-            
-            
+        
+        private Int32 _quizID;
 
-           
+        public questions(Button quizID)
+        {
             
+            InitializeComponent();
+            dgVragen.DataContext = question.getData((int)quizID.Tag);           
+            btnAdd.Click += BtnAdd_Click;
+            _quizID = (int)quizID.Tag;
         }
 
+        
        
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
 
-          
-
-            questionEdit questionEdit = new questionEdit();
-            questionEdit.Show();
+            questionAdd questionAdd = new questionAdd(_quizID);
+            questionAdd.Show();
             this.Close();
         }
 

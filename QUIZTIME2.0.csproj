@@ -88,6 +88,9 @@
       <DependentUpon>answersGrid.xaml</DependentUpon>
     </Compile>
     <Compile Include="Question.cs" />
+    <Compile Include="questionAdd.xaml.cs">
+      <DependentUpon>questionAdd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="questionEdit.xaml.cs">
       <DependentUpon>questionEdit.xaml</DependentUpon>
     </Compile>
@@ -122,6 +125,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="questionAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="questionEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
