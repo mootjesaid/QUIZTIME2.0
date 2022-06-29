@@ -25,12 +25,7 @@ namespace QUIZTIME2._0
         public questionEdit()
         {
 
-          
-
             InitializeComponent();
-            
-            lblID.Visibility = Visibility.Hidden;
-            txbID.Visibility = Visibility.Hidden;
             btnUpdate.Content = "Create";
 
             btnUpdate.Click += btnUpdate_Click;
@@ -41,35 +36,26 @@ namespace QUIZTIME2._0
 
             InitializeComponent();
             question.Read(ID);
-           
 
-            txbID.Text = question.ID.ToString();
+
             txbVraag.Text = question.vraag;
             txbAfbeelding.Text = question.afbeelding;
-            txbquizID.Text = question.tblquizID.ToString();
+            
 
 
             btnUpdate.Click += btnUpdate_Click;
             btnCancel.Click += btnCancel_Click;
-            
+            _quizID = ID;
         }
 
-       
+
 
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
-            
 
-            if (txbID.Text == string.Empty)
-            {
+            question.Update(_quizID.ToString(),
+                            txbVraag.Text, txbAfbeelding.Text);
 
-                question.Create(txbVraag.Text, txbAfbeelding.Text, txbquizID.Text);
-            }
-            else
-            {
-                question.Update(txbID.Text,
-                                txbVraag.Text, txbAfbeelding.Text);
-            }
 
             quizGrid questions = new quizGrid();
             questions.Show();

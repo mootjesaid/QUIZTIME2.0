@@ -1,0 +1,20 @@
+﻿<Window x:Class="QUIZTIME2._0.quizStart"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QUIZTIME2._0"
+        mc:Ignorable="d"
+        Title="quizStart" Height="450" Width="800">
+    <Grid>
+        <Label Name="lbltest" Content="" HorizontalAlignment="Left" Margin="992,75,0,0" VerticalAlignment="Top" FontSize="40"/>
+        <Label Name="lblquiz" Content="" HorizontalAlignment="Center" Margin="0,27,0,0" VerticalAlignment="Top" FontSize="25" Width="244"/>
+        <Label Name="lblvraag" Content="" HorizontalAlignment="Center" Margin="0,174,0,0" VerticalAlignment="Top" FontSize="20" Width="244"/>
+        <Label Name="lblA" Content="" HorizontalAlignment="Left" Margin="0,253,0,0" VerticalAlignment="Top" FontSize="20" Width="400"/>
+        <Label Name="lblB" Content="" HorizontalAlignment="Left" Margin="400,253,0,0" VerticalAlignment="Top" FontSize="20" Width="400"/>
+        <Label Name="lblC" Content="" HorizontalAlignment="Left" Margin="0,338,0,0" VerticalAlignment="Top" FontSize="20" Width="400"/>
+        <Label Name="lblD" HorizontalAlignment="Left" Margin="400,338,0,0" VerticalAlignment="Top" FontSize="20" Width="400">
+        </Label>
+
+    </Grid>
+</Window>

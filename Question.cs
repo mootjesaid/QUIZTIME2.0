@@ -20,6 +20,8 @@ namespace QUIZTIME2
         private string _vraag;
         private string _afbeelding;
         private Int32 _tblquizID;
+       
+
 
         public Int32 ID
         {
@@ -45,6 +47,8 @@ namespace QUIZTIME2
             set { _tblquizID = value; }
         }
 
+       
+
 
 
         SQL sql = new SQL();
@@ -67,7 +71,7 @@ namespace QUIZTIME2
 
 
         //CRUD
-        public void Create(string vraag, string afbeelding, string tblquiz_ID)
+        public void Create(string vraag, string afbeelding, int tblquiz_ID)
 
 
         {
@@ -79,18 +83,36 @@ namespace QUIZTIME2
         }
 
        
-
         public void Read(Int32 ID)
         {
-            string SQL = string.Format("SELECT ID, Vraag, Afbeelding, tblquiz_ID FROM dbquiztime.tblvragen WHERE tblquiz_ID = {0}", ID);
-            DataTable datatable = sql.getDataTable(SQL);
 
+            string SQL = string.Format("SELECT ID, Vraag, Afbeelding, tblquiz_ID FROM dbquiztime.tblvragen WHERE ID = {0};", ID);
+            DataTable datatable = sql.getDataTable(SQL);
+           
             _ID = Convert.ToInt32(datatable.Rows[0]["ID"].ToString());
             _vraag = datatable.Rows[0]["Vraag"].ToString();
             _afbeelding = datatable.Rows[0]["Afbeelding"].ToString();
             _tblquizID = Convert.ToInt32(datatable.Rows[0]["tblquiz_ID"].ToString());
-
         }
+
+        public void showQuestion(Int32 ID, Int32 row)
+        {
+            string SQL = string.Format("SELECT ID, Vraag, Afbeelding, tblquiz_ID FROM dbquiztime.tblvragen WHERE tblquiz_ID = {0}", ID);
+            DataTable datatable = sql.getDataTable(SQL);
+
+            _ID = Convert.ToInt32(datatable.Rows[row]["ID"].ToString());
+            _vraag = datatable.Rows[row]["Vraag"].ToString();
+            _afbeelding = datatable.Rows[row]["Afbeelding"].ToString();
+            _tblquizID = Convert.ToInt32(datatable.Rows[row]["tblquiz_ID"].ToString());
+        }
+
+        public DataSet showQuestoin(int ID)
+        {
+            string SQL = string.Format("SELECT Vraag FROM dbquiztime.tblvragen WHERE tblquiz_ID = {0}", ID);
+
+            return sql.getDataSet(SQL);
+        }
+
         public void Update(string id, string vraag, string afbeelding)
         {
             string SQL = string.Format("Update dbquiztime.tblvragen " +

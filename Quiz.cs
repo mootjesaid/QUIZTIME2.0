@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace QUIZTIME2
 {
@@ -44,6 +45,8 @@ namespace QUIZTIME2
             return sql.getDataSet(SQL);
         }
 
+        
+
         //CRUD
         public void Create(string naam)
         {
@@ -52,6 +55,8 @@ namespace QUIZTIME2
 
             sql.ExecuteNonQuery(SQL);
         }
+
+
         public void Read(Int32 ID)
         {
             string SQL = string.Format("SELECT ID, Naam, Datum FROM dbquiztime.tblquiz WHERE ID = {0}", ID);

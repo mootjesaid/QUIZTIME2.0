@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\xampp\htdocs\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\
+C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\
 QUIZTIME2._0
 none
 false
 DEBUG;TRACE
-C:\xampp\htdocs\QUIZTIME2.0\QUIZTIME2.0\App.xaml
-8603054926
+C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\App.xaml
+11-1846354636
 
-171749419219
-128960139433
-answerEdit.xaml;answersGrid.xaml;MainWindow.xaml;questionAdd.xaml;questionEdit.xaml;questions.xaml;quizEdit.xaml;quizGrid.xaml;
+201958523437
+128-2092192147
+answerAdd.xaml;answerEdit.xaml;answersGrid.xaml;MainWindow.xaml;questionAdd.xaml;questionEdit.xaml;questions.xaml;quizAdmin.xaml;quizEdit.xaml;quizGrid.xaml;quizStart.xaml;
 
 True
 

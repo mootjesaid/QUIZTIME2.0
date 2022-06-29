@@ -10,26 +10,69 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace QUIZTIME2._0
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for questions.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        Quiz quiz = new Quiz();
+        Question question = new Question();
+        
         public MainWindow()
         {
-            InitializeComponent();
-            admin.Click += Admin_Click;
+           InitializeComponent();
+           dgQuiz.DataContext = quiz.getData();
+            btnAdd.Click += BtnAdd_Click;
+            
         }
 
-        private void Admin_Click(object sender, RoutedEventArgs e)
+        
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            quizGrid quizGrid = new quizGrid();
-            quizGrid.Show();
+            quizEdit quizEdit = new quizEdit();
+            quizEdit.Show();
+            this.Close();
+        }
+
+        private void btnStart(object sender, RoutedEventArgs e)
+        {
+            //  Button ID = (Button)sender;
+            //quizStart window = new quizStart(ID);
+
+
+            //window.Show();
+            //this.Close();
+
+            try
+            {
+                object item = dgQuiz.SelectedItem;
+                int ID = int.Parse((dgQuiz.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text);
+
+
+                
+
+                quizStart quizStart = new quizStart(ID);
+                quizStart.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+        }
+
+        private void btnVragen(object sender, RoutedEventArgs e)
+        {
+            Button quizID = (Button)sender;
+            questions window = new questions(quizID);
+
+
+            window.Show();
+            this.Close();
         }
     }
 }

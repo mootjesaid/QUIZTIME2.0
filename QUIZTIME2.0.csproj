@@ -81,6 +81,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Answer.cs" />
+    <Compile Include="answerAdd.xaml.cs">
+      <DependentUpon>answerAdd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="answerEdit.xaml.cs">
       <DependentUpon>answerEdit.xaml</DependentUpon>
     </Compile>
@@ -98,13 +101,23 @@
       <DependentUpon>questions.xaml</DependentUpon>
     </Compile>
     <Compile Include="Quiz.cs" />
+    <Compile Include="quizAdmin.xaml.cs">
+      <DependentUpon>quizAdmin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="quizEdit.xaml.cs">
       <DependentUpon>quizEdit.xaml</DependentUpon>
     </Compile>
     <Compile Include="quizGrid.xaml.cs">
       <DependentUpon>quizGrid.xaml</DependentUpon>
     </Compile>
+    <Compile Include="quizStart.xaml.cs">
+      <DependentUpon>quizStart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SQL.cs" />
+    <Page Include="answerAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="answerEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -137,11 +150,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="quizAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="quizEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="quizGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="quizStart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

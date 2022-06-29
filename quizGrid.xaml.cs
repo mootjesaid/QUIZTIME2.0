@@ -19,6 +19,7 @@ namespace QUIZTIME2._0
     /// </summary>
     public partial class quizGrid : Window
     {
+
         Quiz quiz = new Quiz();
         Question question = new Question();
         public quizGrid()
@@ -28,7 +29,10 @@ namespace QUIZTIME2._0
             btnAdd.Click += BtnAdd_Click;
 
 
+
+
         }
+
 
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
@@ -78,7 +82,6 @@ namespace QUIZTIME2._0
         private void btnVragen(object sender, RoutedEventArgs e)
         {
             Button quizID = (Button)sender;
-            Button fk = (Button)sender;
             questions window = new questions(quizID);
 
 

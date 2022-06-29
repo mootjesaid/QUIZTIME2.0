@@ -17,51 +17,45 @@ namespace QUIZTIME2._0
     /// <summary>
     /// Interaction logic for quizEdit.xaml
     /// </summary>
-    public partial class answerEdit: Window
+    public partial class answerEdit : Window
     {
         Answer answer = new Answer();
+        public string _questionID;
+        public Int32 _ID;
 
         public answerEdit()
         {
             InitializeComponent();
 
-            lblID.Visibility = Visibility.Hidden;
-            txbID.Visibility = Visibility.Hidden;
             btnUpdate.Content = "Create";
-
             btnUpdate.Click += btnUpdate_Click;
             btnCancel.Click += btnCancel_Click;
+
+
         }
         public answerEdit(Int32 ID)
         {
             InitializeComponent();
             answer.Read(ID);
 
-            txbID.Text = answer.ID.ToString();
-            txbAntwoord.Text = answer.antwoord;
-            txbOrder.Text = answer.getal;
-            txbCorrect.Text = answer.correct;
-
+            _ID = ID;
+            vraag.Content = "Vraag " + answer.getal;
+            txb.Text = answer.antwoord;
+            
             btnUpdate.Click += btnUpdate_Click;
             btnCancel.Click += btnCancel_Click;
+           
         }
 
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
-            if (txbID.Text == string.Empty)
-            {
-                answer.Create(txbAntwoord.Text, txbCorrect.Text);
-            }
-            else
-            {
-                answer.Update(txbID.Text,
-                                txbAntwoord.Text, txbCorrect.Text);
-            }
+            answer.Update(_ID, txb.Text );
 
             quizGrid quizGrid = new quizGrid();
             quizGrid.Show();
             this.Close();
         }
+
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             quizGrid window = new quizGrid();

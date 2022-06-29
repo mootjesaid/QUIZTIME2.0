@@ -17,7 +17,11 @@ namespace QUIZTIME2
     class Answer
     {
         private string _ID;
+        private Int32 _lastID;
         private string _antwoord;
+        private string _antwoordB;
+        private string _antwoordC;
+        private string _antwoordD;
         private string _getal;
         private string _correct;
         private string _tblvragenID;
@@ -28,10 +32,31 @@ namespace QUIZTIME2
             get { return _ID; }
             set { _ID = value; }
         }
+        public Int32 lastID
+        {
+            get { return _lastID; }
+            set { _lastID = value; }
+        }
+
         public string antwoord
         {
             get { return _antwoord; }
             set { _antwoord = value; }
+        }
+        public string antwoordB
+        {
+            get { return _antwoordB; }
+            set { _antwoordB = value; }
+        }
+        public string antwoordC
+        {
+            get { return _antwoordC; }
+            set { _antwoordC = value; }
+        }
+        public string antwoordD
+        {
+            get { return _antwoordD; }
+            set { _antwoordD = value; }
         }
 
         public string getal
@@ -39,7 +64,6 @@ namespace QUIZTIME2
             get { return _getal; }
             set { _getal = value; }
         }
-
 
         public string tblquizID
         {
@@ -52,6 +76,14 @@ namespace QUIZTIME2
             get { return _correct; }
             set { _correct = value; }
         }
+
+        public string tblvragenID
+        {
+            get { return _tblvragenID; }
+            set { _tblvragenID = value; }
+        }
+
+        
 
         SQL sql = new SQL();
 
@@ -72,16 +104,19 @@ namespace QUIZTIME2
         }
 
         //CRUD
-        public void Create(string antwoord, string correct)
+        public void Create(string antwoord, string correct, string getal, int tblvragenID)
         {
-            string SQL = string.Format("INSERT INTO dbquiztime.tblantwoorden (Antwoord)(Getal)(Correct) VALUES ('{0}', '{1}')",
-                        antwoord, correct);
+            string SQL = string.Format("INSERT INTO dbquiztime.tblantwoorden (Antwoord, Getal, Correct, tblvragen_id) VALUES ('{0}', '{1}', '{2}', '{3}')",
+                        antwoord, getal, correct, tblvragenID);
+
+
+
 
             sql.ExecuteNonQuery(SQL);
         }
         public void Read(Int32 ID)
         {
-            string SQL = string.Format("SELECT ID, Vraag, Afbeelding, tblquiz_ID FROM dbquiztime.tbaaaa WHERE ID = {0}", ID);
+            string SQL = string.Format("SELECT ID, Antwoord, Getal, Correct, tblvragen_id FROM dbquiztime.tblantwoorden WHERE ID = {0}", ID);
             DataTable datatable = sql.getDataTable(SQL);
 
             _ID = datatable.Rows[0]["ID"].ToString();
@@ -91,14 +126,54 @@ namespace QUIZTIME2
             _tblvragenID = datatable.Rows[0]["tblvragen_id"].ToString();
 
         }
-        public void Update(string antwoord,string correct, string ID)
+
+        public void aID()
         {
-            string SQL = string.Format("Update dbquiztime.tblvragen " +
-                                        "Set Vraag     = '{0}', " +
-                                                "Afbeelding = '{1}', " +
-                                       "WHERE ID     =  {2}", antwoord,
-                                                              correct,
-                                                              ID.ToString());
+            string SQL = string.Format("SELECT MAX(ID) AS last_id FROM tblanwtoorden");
+            DataTable datatable = sql.getDataTable(SQL);
+
+            _lastID = Convert.ToInt32(datatable.Rows[0]["last_id"].ToString());
+            
+
+        }
+
+        public void showAnswers(Int32 question_ID)
+        {
+             
+            string SQL = string.Format("SELECT ID, Antwoord, Getal, Correct, tblvragen_id FROM dbquiztime.tblantwoorden WHERE tblvragen_id = {0}", question_ID);
+            DataTable datatable = sql.getDataTable(SQL);
+
+            _ID = datatable.Rows[0]["ID"].ToString();
+            _antwoord = datatable.Rows[0]["Antwoord"].ToString();
+            _antwoordB = datatable.Rows[1]["Antwoord"].ToString();
+            _antwoordC = datatable.Rows[2]["Antwoord"].ToString();
+            _antwoordD = datatable.Rows[3]["Antwoord"].ToString();
+            _getal = datatable.Rows[0]["Getal"].ToString();
+            _correct = datatable.Rows[0]["Correct"].ToString();
+            _tblvragenID = datatable.Rows[0]["tblvragen_id"].ToString();
+
+        }
+
+       /* public void showB(Int32 question_ID)
+        {
+
+            string SQL = string.Format("SELECT ID, Antwoord, Getal, Correct, tblvragen_id FROM dbquiztime.tblantwoorden WHERE tblvragen_id = {0} LIMIT 1, 3", question_ID);
+            DataTable datatable = sql.getDataTable(SQL);
+
+            _ID = datatable.Rows[0]["ID"].ToString();
+            _antwoord = datatable.Rows[0]["Antwoord"].ToString();
+            _getal = datatable.Rows[0]["Getal"].ToString();
+            _correct = datatable.Rows[0]["Correct"].ToString();
+            _tblvragenID = datatable.Rows[0]["tblvragen_id"].ToString();
+
+        }*/
+        public void Update(Int32 ID, /*string QuestionID*/ string antwoord)
+        {
+            string SQL = string.Format("Update dbquiztime.tblantwoorden " +
+                                        "Set Antwoord     = '{0}' " +
+                                        "WHERE ID     = '{1}'", antwoord,
+                                                           ID.ToString());
+
             sql.ExecuteNonQuery(SQL);
             // System.Windows.MessageBox.Show(customerName + " is geupdate");
         }

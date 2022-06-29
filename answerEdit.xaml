@@ -7,18 +7,9 @@
         mc:Ignorable="d"
         Title="answerEdit" Height="450" Width="800">
     <Grid>
-        <Label Name="lblID" Content="ID" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="95,88,0,0" VerticalAlignment="Top" Width="146"/>
-        <Label Content="Antwoord" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="135,116,0,0" VerticalAlignment="Top" Width="106"/>
-        <Label Content="Order" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="95,147,0,0" VerticalAlignment="Top" Width="146"/>
-        <Label Content="Correct" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="95,178,0,0" VerticalAlignment="Top" Width="146"/>
-
-        <TextBox x:Name="txbID" IsEnabled="false" HorizontalAlignment="Left" Height="23" Margin="255,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
-        <TextBox Name="txbAntwoord" HorizontalAlignment="Left" Height="23" Margin="255,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
-        <TextBox Name="txbOrder" HorizontalAlignment="Left" Height="23" Margin="255,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
-        <TextBox Name="txbCorrect" HorizontalAlignment="Left" Height="23" Margin="255,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
-
-
-
+        <Label Name="vraag" Content="" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="196,194,0,0" VerticalAlignment="Top"  Height="29"/>
+        <TextBox Name="txb" HorizontalAlignment="Left" Height="23" Margin="255,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
+        
         <Button Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="470,379,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="570,379,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>

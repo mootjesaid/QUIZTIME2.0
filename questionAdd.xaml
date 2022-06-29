@@ -7,19 +7,23 @@
         mc:Ignorable="d"
         Title="questionAdd" Height="450" Width="800">
     <Grid>
-        <Label Name="lblID" Content="ID" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="95,88,0,0" VerticalAlignment="Top" Width="146"/>
-        <Label Content="Vraag" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="135,116,0,0" VerticalAlignment="Top" Width="106"/>
-        <Label Content="Afbeelding" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="95,147,0,0" VerticalAlignment="Top" Width="146"/>
-        <Label Name="lblQID" Content="quiz id" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="95,173,0,0" VerticalAlignment="Top" Width="146"/>
+        <Label Content="Vraag:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="49,109,0,0" VerticalAlignment="Top" Width="106"/>
+        <Label Content="Afbeelding:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="9,142,0,0" VerticalAlignment="Top" Width="146"/>
+        
 
-        <TextBox x:Name="txbID" IsEnabled="false" HorizontalAlignment="Left" Height="23" Margin="255,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
-        <TextBox Name="txbVraag" HorizontalAlignment="Left" Height="23" Margin="255,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
-        <TextBox Name="txbAfbeelding" HorizontalAlignment="Left" Height="23" Margin="255,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
-        <TextBox Name="txbquizID" HorizontalAlignment="Left" Height="23" Margin="255,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
-
-
+        <TextBox Name="txbVraag" HorizontalAlignment="Left" Height="23" Margin="155,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
+        <TextBox Name="txbAfbeelding" HorizontalAlignment="Left" Height="23" Margin="155,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
+     
 
         <Button Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="470,379,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="570,379,0,0" VerticalAlignment="Top" Width="75"/>
+
+        <Button Name="ChooseImage" Content="file" HorizontalAlignment="Center" Margin="0,364,0,0" VerticalAlignment="Top"/>
+       
+
+
+
+
+
     </Grid>
 </Window>

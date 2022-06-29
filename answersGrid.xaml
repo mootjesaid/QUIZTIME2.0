@@ -23,16 +23,15 @@
                                          CanUserAddRows="False" Grid.ColumnSpan="2">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Path=ID}" Header="ID" Width="25" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=Antwoord}" Header="Vraag" Width="200" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=Getal}" Header="Getal" Width="200" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=Correct}" Header="Correct" Width="200" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=tblvragen_id}" Header="tblvragen_id" Width="200" IsReadOnly="True" />
-
+                    <DataGridTextColumn Binding="{Binding Path=Antwoord}" Header="Vraag" Width="100" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=Getal}" Header="Getal" Width="100" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=Correct}" Header="Correct" Width="100" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=tblvragen_id}" Header="tblvragen_id" Width="100" IsReadOnly="True" />
 
                     <DataGridTemplateColumn Width="50">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Edit" Click="btnEdit_Click" />
+                                <Button Content="edit"  Click="btnEdit_Click" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

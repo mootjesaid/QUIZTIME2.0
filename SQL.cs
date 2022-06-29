@@ -60,6 +60,7 @@ namespace QUIZTIME2
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(SQL, conn);
+
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
