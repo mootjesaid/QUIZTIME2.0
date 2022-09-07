@@ -6,24 +6,29 @@
         xmlns:local="clr-namespace:QUIZTIME2._0"
         mc:Ignorable="d"
         Title="questionAdd" Height="450" Width="800">
-    <Grid>
-        <Label Content="Vraag:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="49,109,0,0" VerticalAlignment="Top" Width="106"/>
-        <Label Content="Afbeelding:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="9,142,0,0" VerticalAlignment="Top" Width="146"/>
-        
-
-        <TextBox Name="txbVraag" HorizontalAlignment="Left" Height="23" Margin="155,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
-        <TextBox Name="txbAfbeelding" HorizontalAlignment="Left" Height="23" Margin="155,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
-     
-
-        <Button Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="470,379,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="570,379,0,0" VerticalAlignment="Top" Width="75"/>
-
-        <Button Name="ChooseImage" Content="file" HorizontalAlignment="Center" Margin="0,364,0,0" VerticalAlignment="Top"/>
-       
+    <Grid Background="#FFD1F9EE">
+        <Label Content="Vraag: " HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="187,167,0,0" VerticalAlignment="Top"/>
+        <Label Content="Afbeelding: " HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="159,200,0,0" VerticalAlignment="Top"/>
 
 
+        <TextBox Name="txbVraag" HorizontalAlignment="Left" Height="23" Margin="233,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
+        <TextBox Name="txbAfbeelding" HorizontalAlignment="Left" Height="72" Margin="233,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
 
 
+        <Button Name="btnUpdate" Content="Add" HorizontalAlignment="Left" Margin="470,379,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="570,379,0,0" VerticalAlignment="Top" Width="75"/>
 
+        <Button Name="btnSelectImage" Content="file" HorizontalAlignment="Left" Margin="638,198,0,0" VerticalAlignment="Top" RenderTransformOrigin="9.45,-10.258" Width="48"/>
+        <Image Name="imgQuestion" HorizontalAlignment="Left" Height="173" Margin="155,233,0,0" VerticalAlignment="Top" Width="268" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Label Content="Vraag toevoegen" FontSize="25px" FontWeight="bold" HorizontalAlignment="Left" Margin="233,112,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

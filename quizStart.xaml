@@ -13,7 +13,7 @@
         <Label Name="lblA" Content="" HorizontalAlignment="Left" Margin="0,253,0,0" VerticalAlignment="Top" FontSize="20" Width="400"/>
         <Label Name="lblB" Content="" HorizontalAlignment="Left" Margin="400,253,0,0" VerticalAlignment="Top" FontSize="20" Width="400"/>
         <Label Name="lblC" Content="" HorizontalAlignment="Left" Margin="0,338,0,0" VerticalAlignment="Top" FontSize="20" Width="400"/>
-        <Label Name="lblD" HorizontalAlignment="Left" Margin="400,338,0,0" VerticalAlignment="Top" FontSize="20" Width="400">
+        <Label Name="lblD" HorizontalAlignment="Left" Margin="400,338,0,0" VerticalAlignment="Top" FontSize="20" Width="400" Height="37">
         </Label>
 
     </Grid>

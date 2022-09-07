@@ -25,9 +25,11 @@ namespace QUIZTIME2._0
         {
             InitializeComponent();
 
+
             lblID.Visibility = Visibility.Hidden;
             txbID.Visibility = Visibility.Hidden;
             btnUpdate.Content = "Create";
+            lblTitle.Content = "Quiz aanmaken";
 
             btnUpdate.Click += btnUpdate_Click;
             btnCancel.Click += btnCancel_Click;
@@ -36,9 +38,14 @@ namespace QUIZTIME2._0
         {
             InitializeComponent();
             quiz.Read(ID);
+            lblTitle.Content = "Quiz wijzigen";
+
+            lblID.Visibility = Visibility.Hidden;
+            txbID.Visibility = Visibility.Hidden;
 
             txbID.Text = quiz.ID.ToString();
             txbNaam.Text = quiz.naam;
+
 
             btnUpdate.Click += btnUpdate_Click;
             btnCancel.Click += btnCancel_Click;
@@ -56,15 +63,16 @@ namespace QUIZTIME2._0
                                 txbNaam.Text);
             }
 
-            quizGrid quizGrid = new quizGrid();
+            MainWindow quizGrid = new MainWindow();
             quizGrid.Show();
             this.Close();
         }
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            quizGrid window = new quizGrid();
+            MainWindow window = new MainWindow();
             window.Show();
             this.Close();
         }
+
     }
 }

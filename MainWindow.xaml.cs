@@ -27,6 +27,7 @@ namespace QUIZTIME2._0
            InitializeComponent();
            dgQuiz.DataContext = quiz.getData();
             btnAdd.Click += BtnAdd_Click;
+           
             
         }
 
@@ -70,9 +71,46 @@ namespace QUIZTIME2._0
             Button quizID = (Button)sender;
             questions window = new questions(quizID);
 
-
-            window.Show();
             this.Close();
+            window.Show();
+            
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                object item = dgQuiz.SelectedItem;
+                int ID = int.Parse((dgQuiz.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text);
+
+                quizEdit window = new quizEdit(ID);
+                window.Show();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                object item = dgQuiz.SelectedItem;
+                int ID = int.Parse((dgQuiz.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text);
+
+                if (quiz.Delete(ID) == true)
+                {
+                    dgQuiz.DataContext = quiz.getData();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
         }
     }
 }

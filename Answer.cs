@@ -18,7 +18,7 @@ namespace QUIZTIME2
     {
         private string _ID;
         private Int32 _lastID;
-        private string _antwoord;
+        private string _antwoordA;
         private string _antwoordB;
         private string _antwoordC;
         private string _antwoordD;
@@ -38,10 +38,10 @@ namespace QUIZTIME2
             set { _lastID = value; }
         }
 
-        public string antwoord
+        public string antwoordA
         {
-            get { return _antwoord; }
-            set { _antwoord = value; }
+            get { return _antwoordA; }
+            set { _antwoordA = value; }
         }
         public string antwoordB
         {
@@ -120,7 +120,7 @@ namespace QUIZTIME2
             DataTable datatable = sql.getDataTable(SQL);
 
             _ID = datatable.Rows[0]["ID"].ToString();
-            _antwoord = datatable.Rows[0]["Antwoord"].ToString();
+            _antwoordA = datatable.Rows[0]["Antwoord"].ToString();
             _getal = datatable.Rows[0]["Getal"].ToString();
             _correct = datatable.Rows[0]["Correct"].ToString();
             _tblvragenID = datatable.Rows[0]["tblvragen_id"].ToString();
@@ -137,14 +137,14 @@ namespace QUIZTIME2
 
         }
 
-        public void showAnswers(Int32 question_ID)
+        public void showAnswers(long question_ID)
         {
              
             string SQL = string.Format("SELECT ID, Antwoord, Getal, Correct, tblvragen_id FROM dbquiztime.tblantwoorden WHERE tblvragen_id = {0}", question_ID);
             DataTable datatable = sql.getDataTable(SQL);
 
             _ID = datatable.Rows[0]["ID"].ToString();
-            _antwoord = datatable.Rows[0]["Antwoord"].ToString();
+            _antwoordA = datatable.Rows[0]["Antwoord"].ToString();
             _antwoordB = datatable.Rows[1]["Antwoord"].ToString();
             _antwoordC = datatable.Rows[2]["Antwoord"].ToString();
             _antwoordD = datatable.Rows[3]["Antwoord"].ToString();

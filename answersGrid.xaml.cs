@@ -20,19 +20,38 @@ namespace QUIZTIME2._0
     public partial class answersGrid : Window
     {
         Answer answer = new Answer();
-        public Int32 _vraagID;
+        Quiz quiz = new Quiz();
+        Question question = new Question();
 
-        public answersGrid(Button vraagID)
+        public Int32 _vraagID;
+        public Button _quizID;
+        public Button _vraagID2;
+       
+
+        public answersGrid(Button vraagID, Button quizID)
         {
             InitializeComponent();
             dgAnswers.DataContext = answer.getData((int)vraagID.Tag);
             _vraagID = (int)vraagID.Tag;
+            quiz.Read((int)quizID.Tag);
+            question.Read((int)vraagID.Tag);
+          
+
             btnAdd.Click += BtnAdd_Click;
-
-
+            btnBack.Click += BtnBack_Click;
+            lblQuiz.Content = quiz.naam ;
+            lblAntwoord.Content = question.vraag;
+            _quizID = quizID;
+            _vraagID2 = vraagID;
         }
 
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            questions questions = new questions(_quizID);
+            questions.Show();
+            this.Close();
 
+        }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
@@ -46,7 +65,7 @@ namespace QUIZTIME2._0
                 object item = dgAnswers.SelectedItem;
                 int ID = int.Parse((dgAnswers.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text);
 
-                answerEdit window = new answerEdit(ID);
+                answerEdit window = new answerEdit(ID, _vraagID2, _quizID);
                 window.Show();
                 this.Close();
                    

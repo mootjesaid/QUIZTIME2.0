@@ -22,12 +22,10 @@ namespace QUIZTIME2._0
     {
         Quiz quiz = new Quiz();
         Question question = new Question();
-        private int _order;
+        Answer answer = new Answer();
+        int row = 0;
         
-      
         
-
-
         public quizStart(Int32 quizID)
         {
 
@@ -38,19 +36,50 @@ namespace QUIZTIME2._0
             quiz.Read(quizID);
             lblquiz.Content = quiz.naam;
             
+            question.showQuestion(quizID);
+            lblvraag.Content = question.ID;
+
+            answer.showAnswers(question.ID);
+            lblA.Content = answer.antwoordA;
+            lblB.Content = answer.antwoordB;
+            lblC.Content = answer.antwoordC;
+            lblD.Content = answer.antwoordD;
+
+
+
            
-            question.Read(quizID);
-            lblvraag.Content = question.vraag;
 
         }
-
-        
-
 
         public void NextQuestion()
         {
             
+            try
+            {
+                int quiz = 2;
+                row++;
+
+                question.showQuestion1(quiz, row);
+                lblvraag.Content = question.ID;
+
+
+                answer.showAnswers(question.ID);
+                lblA.Content = answer.antwoordA;
+                lblB.Content = answer.antwoordB;
+                lblC.Content = answer.antwoordC;
+                lblD.Content = answer.antwoordD;
+            } 
+            catch 
+            {
+                quizEnd quizEnd = new quizEnd();
+                quizEnd.Show();
+                this.Close();
+            }
+
         }
-       
+
+
     }
+       
 }
+

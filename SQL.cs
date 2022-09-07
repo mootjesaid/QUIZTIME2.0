@@ -54,20 +54,23 @@ namespace QUIZTIME2
 
             return datatable;
         }
-        public void ExecuteNonQuery(string SQL)
+        public long ExecuteNonQuery(string SQL)
         {
+            long ID = 0;
             try
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(SQL, conn);
 
                 cmd.ExecuteNonQuery();
+                ID = cmd.LastInsertedId;
                 conn.Close();
             }
             catch (MySqlException ex)
             {
                 System.Windows.MessageBox.Show(ex.ToString());
             }
+            return ID;
         }
     }
 }

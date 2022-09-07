@@ -107,8 +107,8 @@
     <Compile Include="quizEdit.xaml.cs">
       <DependentUpon>quizEdit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="quizGrid.xaml.cs">
-      <DependentUpon>quizGrid.xaml</DependentUpon>
+    <Compile Include="quizEnd.xaml.cs">
+      <DependentUpon>quizEnd.xaml</DependentUpon>
     </Compile>
     <Compile Include="quizStart.xaml.cs">
       <DependentUpon>quizStart.xaml</DependentUpon>
@@ -158,7 +158,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="quizGrid.xaml">
+    <Page Include="quizEnd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -193,6 +193,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="img\question\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

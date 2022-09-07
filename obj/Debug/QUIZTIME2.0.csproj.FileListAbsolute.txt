@@ -86,7 +86,6 @@ C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\ob
 C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\questionEdit.g.cs
 C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\questions.g.cs
 C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\quizEdit.g.cs
-C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\quizGrid.g.cs
 C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\App.g.cs
 C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\QUIZTIME2.0_MarkupCompile.cache
 C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\QUIZTIME2.0_MarkupCompile.lref
@@ -97,7 +96,6 @@ C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\ob
 C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\questionEdit.baml
 C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\questions.baml
 C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\quizEdit.baml
-C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\quizGrid.baml
 C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\QUIZTIME2.0.g.resources
 C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\QUIZTIME2._0.Properties.Resources.resources
 C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\QUIZTIME2.0.csproj.GenerateResource.cache
@@ -141,7 +139,6 @@ C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\
 C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\questionEdit.g.cs
 C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\questions.g.cs
 C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\quizEdit.g.cs
-C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\quizGrid.g.cs
 C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\quizStart.g.cs
 C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\App.g.cs
 C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\QUIZTIME2.0_MarkupCompile.cache
@@ -153,7 +150,6 @@ C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\
 C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\questionEdit.baml
 C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\questions.baml
 C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\quizEdit.baml
-C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\quizGrid.baml
 C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\quizStart.baml
 C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\QUIZTIME2.0.g.resources
 C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\QUIZTIME2._0.Properties.Resources.resources
@@ -169,3 +165,7 @@ C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\
 C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\quizAdmin.baml
 C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\answerAdd.g.cs
 C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\answerAdd.baml
+C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\answerAdd.g.cs
+C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\answerAdd.baml
+C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\quizEnd.g.cs
+C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\quizEnd.baml

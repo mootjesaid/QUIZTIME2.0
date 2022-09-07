@@ -6,17 +6,16 @@
         xmlns:local="clr-namespace:QUIZTIME2._0"
         mc:Ignorable="d"
         Title="quizEdit" Height="450" Width="800">
-    <Grid>
-        <Label Name="lblID" Content="ID" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="95,88,0,0" VerticalAlignment="Top" Width="146"/>
-        <Label Content="Naam" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="135,116,0,0" VerticalAlignment="Top" Width="106"/>
-        <Label Content="Datum" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="95,147,0,0" VerticalAlignment="Top" Width="146"/>
-
-        <TextBox x:Name="txbID" IsEnabled="false" HorizontalAlignment="Left" Height="23" Margin="255,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
-        <TextBox Name="txbNaam" HorizontalAlignment="Left" Height="23" Margin="255,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
-
+    <Grid Background="#FFD1F9EE">
+        <Label Name="lblID" Content="ID:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="178,182,0,0" VerticalAlignment="Top" />
+        <Label Content="Naam: " HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="151,209,0,0" VerticalAlignment="Top" />
+        <Label Name="lblTitle" FontSize="25" FontWeight="Bold" Content="" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="168,152,0,0" VerticalAlignment="Top" />
+        <TextBox x:Name="txbID" IsEnabled="false" HorizontalAlignment="Center" Height="23" Margin="0,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
+        <TextBox Name="txbNaam" HorizontalAlignment="Center" Height="23" Margin="0,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
 
 
-        <Button Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="470,379,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="570,379,0,0" VerticalAlignment="Top" Width="75"/>
+
+        <Button Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="570,374,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="472,374,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>

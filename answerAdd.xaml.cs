@@ -40,6 +40,33 @@ namespace QUIZTIME2._0
 
             answer.Create(txbA.Text, correctA, "A", _ID);
 
+            string correctB = "";
+            if (rbB.IsChecked == true)
+            {
+                correctB = "true";
+            }
+            else { correctB = "false"; }
+
+            answer.Create(txbB.Text, correctB, "B", _ID);
+
+            string correctC = "";
+            if (rbD.IsChecked == true)
+            {
+                correctC = "true";
+            }
+            else { correctC = "false"; }
+
+            answer.Create(txbC.Text, correctC, "C", _ID);
+
+            string correctD = "";
+            if (rbD.IsChecked == true)
+            {
+                correctD = "true";
+            }
+            else { correctD = "false"; }
+
+            answer.Create(txbD.Text, correctD, "D", _ID);
+
             this.Close();
 
         }

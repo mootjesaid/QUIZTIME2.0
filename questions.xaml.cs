@@ -20,27 +20,43 @@ namespace QUIZTIME2._0
     public partial class questions : Window
     {
         Question question = new Question();
+        Quiz quiz = new Quiz();
         
         private Int32 _quizID;
+        private Button _quizIDButton;
+
+
 
         public questions(Button quizID)
         {
-            
+
             InitializeComponent();
-            dgVragen.DataContext = question.getData((int)quizID.Tag);           
+            dgVragen.DataContext = question.getData((int)quizID.Tag); 
+            quiz.Read((int)quizID.Tag);
+
             btnAdd.Click += BtnAdd_Click;
+            btnBack.Click += BtnBack_Click;
+
+
             _quizID = (int)quizID.Tag;
+            _quizIDButton = quizID;
+            lblQuiz.Content = quiz.naam;
+
         }
 
-        
-       
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow window = new MainWindow();
+            window.Show();
+            this.Close();
+        }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
 
             questionAdd questionAdd = new questionAdd(_quizID);
             questionAdd.Show();
-            this.Close();
+            
         }
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
@@ -51,9 +67,10 @@ namespace QUIZTIME2._0
                 int ID = int.Parse((dgVragen.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text);
                
 
-                questionEdit window = new questionEdit();
+                questionEdit window = new questionEdit(ID, _quizIDButton);
                 window.Show();
                 this.Close();
+                
             }
             catch (Exception ex)
             {
@@ -85,13 +102,10 @@ namespace QUIZTIME2._0
         {
             Button vraagID = (Button)sender;
 
-
-
-            answersGrid answersGrid = new answersGrid(vraagID);
-
-
+            answersGrid answersGrid = new answersGrid(vraagID, _quizIDButton);
             answersGrid.Show();
             this.Close();
+            
         }
     }
 }

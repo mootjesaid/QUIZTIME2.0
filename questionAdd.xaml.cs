@@ -1,8 +1,10 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Path = System.IO.Path;
 
 namespace QUIZTIME2._0
 {
@@ -28,38 +31,49 @@ namespace QUIZTIME2._0
         public questionAdd()
         {
 
-            InitializeComponent();
-            btnUpdate.Click += btnUpdate_Click;
-            btnCancel.Click += btnCancel_Click;
-            ChooseImage.Click += ChooseImage_Click;
 
+            InitializeComponent();
+            btnUpdate.Click += BtnUpdate_Click;
+            btnCancel.Click += BtnCancel_Click;
+            btnSelectImage.Click += BtnSelectImage_Click;
         }
 
-
+        
 
         public questionAdd(Int32 _quizID)
         {
 
             InitializeComponent();
             _ID = _quizID;
-            
-           
-            btnUpdate.Click += btnUpdate_Click;
-            btnCancel.Click += btnCancel_Click;
-            ChooseImage.Click += ChooseImage_Click;
+
+            btnUpdate.Click += BtnUpdate_Click;
+            btnCancel.Click += BtnCancel_Click;
+            btnSelectImage.Click += BtnSelectImage_Click;
         }
 
+  
 
-        private void ChooseImage_Click(object sender, RoutedEventArgs e)
+        private void BtnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        
+        private void BtnSelectImage_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG|*.jpg", ValidateNames = true, Multiselect = false };
             {
                 bool? result = ofd.ShowDialog();
                 if (result == true)
                 {
-                    string file = string.Empty;
-                    file = ofd.SafeFileName;
-                    txbAfbeelding.Text = file;
+                    txbAfbeelding.Text = ofd.FileName;
+
+                    BitmapImage image = new BitmapImage();
+                    image.BeginInit();
+                    image.UriSource = new Uri(ofd.FileName);
+                    image.EndInit();
+
+                    imgQuestion.Source = image;
                 }
                 else
                 {
@@ -67,25 +81,16 @@ namespace QUIZTIME2._0
                 }
             }
         }
-    
 
-
-        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        private void BtnUpdate_Click(object sender, RoutedEventArgs e)
         {
             question.Create(txbVraag.Text, txbAfbeelding.Text, _ID);
-            
-            quizGrid questions = new quizGrid();
+
+            MainWindow questions = new MainWindow();
             questions.Show();
             this.Close();
         }
 
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
-        {
-            quizGrid window = new quizGrid();
-            window.Show();
-            this.Close();
-        }
 
-        
     }
 }

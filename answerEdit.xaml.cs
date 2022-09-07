@@ -22,25 +22,28 @@ namespace QUIZTIME2._0
         Answer answer = new Answer();
         public string _questionID;
         public Int32 _ID;
+        public Button _vraagID;
+        public Button _quizID;
 
         public answerEdit()
         {
             InitializeComponent();
 
-            btnUpdate.Content = "Create";
+            
             btnUpdate.Click += btnUpdate_Click;
             btnCancel.Click += btnCancel_Click;
 
 
         }
-        public answerEdit(Int32 ID)
+        public answerEdit(Int32 ID, Button vraagID, Button quizID)
         {
             InitializeComponent();
             answer.Read(ID);
-
+            _quizID = quizID;
+            _vraagID = vraagID;
             _ID = ID;
             vraag.Content = "Vraag " + answer.getal;
-            txb.Text = answer.antwoord;
+            txb.Text = answer.antwoordA;
             
             btnUpdate.Click += btnUpdate_Click;
             btnCancel.Click += btnCancel_Click;
@@ -51,15 +54,15 @@ namespace QUIZTIME2._0
         {
             answer.Update(_ID, txb.Text );
 
-            quizGrid quizGrid = new quizGrid();
-            quizGrid.Show();
+            answersGrid answersGrid = new answersGrid(_vraagID, _quizID);
+            answersGrid.Show();
             this.Close();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            quizGrid window = new quizGrid();
-            window.Show();
+            answersGrid answersGrid = new answersGrid(_vraagID, _quizID);
+            answersGrid.Show();
             this.Close();
         }
     }
