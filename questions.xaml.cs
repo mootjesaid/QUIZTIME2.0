@@ -54,8 +54,9 @@ namespace QUIZTIME2._0
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
 
-            questionAdd questionAdd = new questionAdd(_quizID);
+            questionAdd questionAdd = new questionAdd(_quizID, _quizIDButton);
             questionAdd.Show();
+            this.Close();
             
         }
 
@@ -90,6 +91,10 @@ namespace QUIZTIME2._0
                 {
                     dgVragen.DataContext = question.getData_Delete();
                 }
+
+                questions questions = new questions(_quizIDButton);
+                questions.Show();
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -105,7 +110,10 @@ namespace QUIZTIME2._0
             answersGrid answersGrid = new answersGrid(vraagID, _quizIDButton);
             answersGrid.Show();
             this.Close();
-            
+
+
+
+
         }
     }
 }

@@ -5,16 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QUIZTIME2._0"
         mc:Ignorable="d"
-        Title="quizStart" Height="450" Width="800">
-    <Grid>
-        <Label Name="lbltest" Content="" HorizontalAlignment="Left" Margin="992,75,0,0" VerticalAlignment="Top" FontSize="40"/>
-        <Label Name="lblquiz" Content="" HorizontalAlignment="Center" Margin="0,27,0,0" VerticalAlignment="Top" FontSize="25" Width="244"/>
-        <Label Name="lblvraag" Content="" HorizontalAlignment="Center" Margin="0,174,0,0" VerticalAlignment="Top" FontSize="20" Width="244"/>
-        <Label Name="lblA" Content="" HorizontalAlignment="Left" Margin="0,253,0,0" VerticalAlignment="Top" FontSize="20" Width="400"/>
-        <Label Name="lblB" Content="" HorizontalAlignment="Left" Margin="400,253,0,0" VerticalAlignment="Top" FontSize="20" Width="400"/>
-        <Label Name="lblC" Content="" HorizontalAlignment="Left" Margin="0,338,0,0" VerticalAlignment="Top" FontSize="20" Width="400"/>
-        <Label Name="lblD" HorizontalAlignment="Left" Margin="400,338,0,0" VerticalAlignment="Top" FontSize="20" Width="400" Height="37">
-        </Label>
+        Title="quizStart" Height="auto" Width="auto" Background="#FFD1F9EE">
+    <Grid Width="1258" Height="945">
+        <Label Name="lblquiz" Content="Quiz" HorizontalAlignment="Center" Margin="0,27,0,0" VerticalAlignment="Top" FontSize="25"/>
+        <Label Name="lblvraag" Content="Vraag" HorizontalAlignment="Center" Margin="0,97,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Image Width="300" Height="300" VerticalAlignment="Top" HorizontalAlignment="Left" Name="ImageBox" Margin="475,215,0,0"/>
+
+        <Label Name="lblA" Content="A" HorizontalAlignment="Left" Margin="418,0,0,326" VerticalAlignment="Bottom" FontSize="20"/>
+        <Label Name="lblB" Content="B" HorizontalAlignment="Left" Margin="816,0,0,326" VerticalAlignment="Bottom" FontSize="20"/>
+        <Label Name="lblC" Content="C" HorizontalAlignment="Left" Margin="418,0,0,226" VerticalAlignment="Bottom" FontSize="20" />
+        <Label Name="lblD" Content="D" HorizontalAlignment="Left" Margin="816,0,0,226" VerticalAlignment="Bottom" FontSize="20"></Label>
+        <TextBox Name="txbAfbeelding" HorizontalAlignment="Center" Margin="0,197,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

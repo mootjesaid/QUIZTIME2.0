@@ -6,11 +6,26 @@
         xmlns:local="clr-namespace:QUIZTIME2._0"
         mc:Ignorable="d"
         Title="answerEdit" Height="450" Width="800">
-    <Grid>
-        <Label Name="vraag" Content="" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="196,194,0,0" VerticalAlignment="Top"  Height="29"/>
-        <TextBox Name="txb" HorizontalAlignment="Left" Height="23" Margin="255,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
-        
-        <Button Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="470,379,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="570,379,0,0" VerticalAlignment="Top" Width="75"/>
+    <Grid Background="#FFD1F9EE">
+        <Label Content="Vraag A:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="124,154,0,0" VerticalAlignment="Top"  Height="29"/>
+        <Label Content="Vraag B:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="124,182,0,0" VerticalAlignment="Top"  Height="29"/>
+        <Label Content="Vraag C:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="124,210,0,0" VerticalAlignment="Top"  Height="29"/>
+        <Label Content="Vraag D:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="124,239,0,0" VerticalAlignment="Top"  Height="29"/>
+
+        <TextBox Name="txbA" HorizontalAlignment="Left" Height="23" Margin="184,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
+        <TextBox Name="txbB" HorizontalAlignment="Left" Height="23" Margin="184,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
+        <TextBox Name="txbC" HorizontalAlignment="Left" Height="23" Margin="184,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
+        <TextBox Name="txbD" HorizontalAlignment="Left" Height="23" Margin="184,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"/>
+
+        <RadioButton x:Name="rbA" Content="A" HorizontalAlignment="Left" Margin="594,161,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rbB" Content="B" HorizontalAlignment="Left" Margin="594,189,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rbC" Content="C" HorizontalAlignment="Left" Margin="594,217,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rbD" Content="D" HorizontalAlignment="Left" Margin="594,245,0,0" VerticalAlignment="Top"/>
+
+        <Button Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="659,374,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.158,0.49"/>
+        <Button x:Name="btnCancel" Content="Annuleer" HorizontalAlignment="Left" Margin="92,374,0,0" VerticalAlignment="Top" Width="74"/>
+        <Label Content="Antwoorden wijzigen" FontSize="30" FontWeight="Bold" HorizontalAlignment="Left" Margin="124,77,0,0" VerticalAlignment="Top"/>
+        <Label Name="lblQuestion" Content="" FontSize="20" HorizontalAlignment="Left" Margin="124,35,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

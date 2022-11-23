@@ -7,8 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Height="700" Width="800" Background="#FFD1F9EE">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="293*"/>
+        </Grid.RowDefinitions>
         <TextBlock Height="32" HorizontalAlignment="Left" Margin="16,15,0,0" x:Name="textBlockHeading" VerticalAlignment="Top" Width="310" FontSize="20" FontStretch="Normal" ><Run Language="nl-nl" Text="Quiz"/><LineBreak/><Run Language="nl-nl"/><LineBreak/><Run Language="nl-nl"/></TextBlock>
-        <Grid HorizontalAlignment="Left" Height="585" VerticalAlignment="Top" Width="778" Margin="10,0,0,0">
+        <Grid HorizontalAlignment="Center" Height="585" VerticalAlignment="Top" Width="778" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="207*"/>
                 <ColumnDefinition Width="428*"/>
@@ -38,14 +42,6 @@
                     <DataGridTemplateColumn Width="50">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Antwoord modus" />
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-
-                    <DataGridTemplateColumn Width="50">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
                                 <Button Content="Vragen" Tag="{Binding Path=ID}" Click="btnVragen"  />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
@@ -59,10 +55,10 @@
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTemplateColumn Width="50">
+                    <DataGridTemplateColumn Width="80">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Delete" Click="btnDelete_Click" />
+                                <Button Content="Verwijderen" Click="btnDelete_Click" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -71,7 +67,7 @@
                 </DataGrid.Columns>
             </DataGrid>
 
-            <Button Name="btnAdd" Content="Add" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="397,397,0,0"/>
+            <Button Name="btnAdd" Content="Toevoegen" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="85" Grid.Column="1" Margin="397,397,0,0"/>
 
         </Grid>
     </Grid>

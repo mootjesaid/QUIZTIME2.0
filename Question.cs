@@ -72,7 +72,7 @@ namespace QUIZTIME2
 
 
         //CRUD
-        public void Create(string vraag, string afbeelding, int tblquiz_ID)
+       /* public void Create(string vraag, string afbeelding, int tblquiz_ID)
 
 
         {
@@ -83,9 +83,31 @@ namespace QUIZTIME2
 
             SQL = String.Format("UPDATE dbquiztime.tblvragen SET Afbeelding = '../.. /img/question/{0}.jpg' where ID = {0}", ID);
             sql.ExecuteNonQuery(SQL);
+        }*/
+
+        public void Create(string vraag, string afbeelding, int tblquiz_ID)
+
+
+        {
+
+            if (string.IsNullOrEmpty(afbeelding))
+            {
+                string SQL = string.Format("INSERT INTO dbquiztime.tblvragen (Vraag, tblquiz_ID) VALUES ('{0}', '{1}')", vraag, tblquiz_ID);
+                ID = sql.ExecuteNonQuery(SQL);
+            }
+            else
+            {
+                string SQL = string.Format("INSERT INTO dbquiztime.tblvragen (Vraag, tblquiz_ID) VALUES ('{0}', '{1}')", vraag, tblquiz_ID);
+                ID = sql.ExecuteNonQuery(SQL);
+
+                File.Copy(afbeelding, @"../../img/question/" + ID + ".jpg", true);
+
+                SQL = String.Format("UPDATE dbquiztime.tblvragen SET Afbeelding = '../.. /img/question/{0}.jpg' where ID = {0}", ID);
+                sql.ExecuteNonQuery(SQL);
+            }
         }
 
-       
+
         public void Read(Int32 ID)
         {
 
@@ -109,12 +131,12 @@ namespace QUIZTIME2
             _tblquizID = Convert.ToInt32(datatable.Rows[0]["tblquiz_ID"].ToString());
         }
 
-        public void showQuestion1(Int32 ID, Int32 row)
+        public void showQuestion1(long ID, Int32 row)
         {
             string SQL = string.Format("SELECT ID, Vraag, Afbeelding, tblquiz_ID FROM dbquiztime.tblvragen WHERE tblquiz_ID = {0}", ID);
             DataTable datatable = sql.getDataTable(SQL);
 
-            _ID = Convert.ToInt32(datatable.Rows[0]["ID"].ToString());
+            _ID = Convert.ToInt32(datatable.Rows[row]["ID"].ToString());
             _vraag = datatable.Rows[row]["Vraag"].ToString();
             _afbeelding = datatable.Rows[0]["Afbeelding"].ToString();
             _tblquizID = Convert.ToInt32(datatable.Rows[0]["tblquiz_ID"].ToString());

@@ -30,8 +30,20 @@ namespace QUIZTIME2._0
         {
             InitializeComponent();
             btnNext.Click += BtnNext_Click;
+            btnBack.Click += BtnBack_Click;
+            btnAntwoord.Click += BtnAntwoord_Click;
             _quizStart = quizStart;
             
+        }
+
+        private void BtnAntwoord_Click(object sender, RoutedEventArgs e)
+        {
+            _quizStart.revealAnswer();
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            _quizStart.LastQuestion();
         }
 
         private void BtnNext_Click(object sender, RoutedEventArgs e)

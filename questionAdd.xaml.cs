@@ -26,6 +26,7 @@ namespace QUIZTIME2._0
     {
         Question question = new Question();
         private Int32 _ID;
+        private Button _Id1;
 
 
         public questionAdd()
@@ -33,28 +34,33 @@ namespace QUIZTIME2._0
 
 
             InitializeComponent();
-            btnUpdate.Click += BtnUpdate_Click;
+            btnAdd.Click += BtnAdd_Click;
             btnCancel.Click += BtnCancel_Click;
             btnSelectImage.Click += BtnSelectImage_Click;
+            txbAfbeelding.Visibility = Visibility.Hidden;
         }
 
         
 
-        public questionAdd(Int32 _quizID)
+        public questionAdd(Int32 _quizID,Button quizID)
         {
 
             InitializeComponent();
             _ID = _quizID;
-
-            btnUpdate.Click += BtnUpdate_Click;
+            _Id1 = quizID;
+            btnAdd.Click += BtnAdd_Click;
             btnCancel.Click += BtnCancel_Click;
             btnSelectImage.Click += BtnSelectImage_Click;
+            txbAfbeelding.Visibility = Visibility.Hidden;
+
         }
 
-  
+
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
+            questions questions = new questions(_Id1);
+            questions.Show();           
             this.Close();
         }
 
@@ -82,11 +88,11 @@ namespace QUIZTIME2._0
             }
         }
 
-        private void BtnUpdate_Click(object sender, RoutedEventArgs e)
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
             question.Create(txbVraag.Text, txbAfbeelding.Text, _ID);
 
-            MainWindow questions = new MainWindow();
+            questions questions = new questions(_Id1);
             questions.Show();
             this.Close();
         }

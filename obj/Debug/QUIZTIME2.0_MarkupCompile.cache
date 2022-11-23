@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\App.xaml
-11-1950520157
+121821418363
 
-19-253356184
+21-2107842762
 128164615713
-answerAdd.xaml;answerEdit.xaml;answersGrid.xaml;MainWindow.xaml;questionAdd.xaml;questionEdit.xaml;questions.xaml;quizAdmin.xaml;quizEdit.xaml;quizEnd.xaml;quizStart.xaml;
+answerAdd.xaml;answerEdit.xaml;answersGrid.xaml;AntwoordStart.xaml;MainWindow.xaml;questionAdd.xaml;questionEdit.xaml;questions.xaml;quizAdmin.xaml;quizEdit.xaml;quizEnd.xaml;quizStart.xaml;
 
-False
+True
 

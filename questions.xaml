@@ -26,8 +26,8 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Path=ID}" Header="ID" Width="25" IsReadOnly="True" />
                     <DataGridTextColumn Binding="{Binding Path=Vraag}" Header="Vraag" Width="200" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=Afbeelding}" Header="Afbeelding" Width="200" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=tblquiz_ID}" Header="tblquiz_ID" Width="200" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=Afbeelding}" Header="Afbeelding" Width="100" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=tblquiz_ID}" Header="tblquiz_ID" Width="100" IsReadOnly="True" />
 
                     <DataGridTemplateColumn Width="50">
                         <DataGridTemplateColumn.CellTemplate>
@@ -37,15 +37,15 @@
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTemplateColumn Width="50">
+                    <DataGridTemplateColumn Width="70">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Delete" Click="btnDelete_Click" />
+                                <Button Content="Verwijderen" Click="btnDelete_Click" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTemplateColumn Width="50">
+                    <DataGridTemplateColumn Width="80">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Button Content="Antwoorden" Tag="{Binding Path=ID}" Click="btn_Antwoorden"  />
@@ -56,8 +56,8 @@
                 </DataGrid.Columns>
             </DataGrid>
 
-            <Button Name="btnAdd" Content="Add" HorizontalAlignment="Left" Tag="{Binding Path=tblquiz_ID}"  VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="449,397,0,0"/>
-            <Button Name="btnBack" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="0,397,0,0"/>
+            <Button Name="btnAdd" Content="Toevoegen" HorizontalAlignment="Left" Tag="{Binding Path=tblquiz_ID}"  VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="449,397,0,0"/>
+            <Button Name="btnBack" Content="Terug" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="0,397,0,0"/>
 
         </Grid>
         <Label Name="lblQuiz" Content="" FontSize="12pt" HorizontalAlignment="Left" Margin="11,5,0,0" VerticalAlignment="Top"/>

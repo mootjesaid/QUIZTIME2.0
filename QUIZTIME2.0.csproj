@@ -90,6 +90,9 @@
     <Compile Include="answersGrid.xaml.cs">
       <DependentUpon>answersGrid.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AntwoordStart.xaml.cs">
+      <DependentUpon>AntwoordStart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Question.cs" />
     <Compile Include="questionAdd.xaml.cs">
       <DependentUpon>questionAdd.xaml</DependentUpon>
@@ -123,6 +126,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="answersGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AntwoordStart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

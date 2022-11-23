@@ -35,14 +35,22 @@ namespace QUIZTIME2._0
             _vraagID = (int)vraagID.Tag;
             quiz.Read((int)quizID.Tag);
             question.Read((int)vraagID.Tag);
-          
 
+            btnEdit.Click += BtnEdit_Click;
             btnAdd.Click += BtnAdd_Click;
             btnBack.Click += BtnBack_Click;
             lblQuiz.Content = quiz.naam ;
             lblAntwoord.Content = question.vraag;
             _quizID = quizID;
             _vraagID2 = vraagID;
+        }
+
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            answerEdit answerEdit = new answerEdit(_vraagID2, _quizID );
+            answerEdit.Show();
+            this.Close();
+
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
@@ -55,11 +63,12 @@ namespace QUIZTIME2._0
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            answerAdd answerAdd = new answerAdd(_vraagID);
+            answerAdd answerAdd = new answerAdd(_vraagID2, _quizID);
             answerAdd.Show();
+            this.Close();
         }
 
-        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        /*private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
            
                 object item = dgAnswers.SelectedItem;
@@ -69,7 +78,7 @@ namespace QUIZTIME2._0
                 window.Show();
                 this.Close();
                    
-        }
+        }*/
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {

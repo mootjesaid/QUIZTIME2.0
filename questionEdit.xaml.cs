@@ -1,4 +1,4 @@
-﻿using Microsoft.Win32;
+﻿                                                                                                                                                                                                                                                                                                                                                       using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +24,7 @@ namespace QUIZTIME2._0
         Question question = new Question();
         private Int32 _questoinID;
         private Button _quizID;
-        private string _getPath;
+        private string _getPath;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 
         public questionEdit()
         {
@@ -37,7 +37,7 @@ namespace QUIZTIME2._0
             btnCancel.Click += btnCancel_Click;
         }
 
-
+        
 
         public questionEdit(Int32 ID, Button quizID)
         {
@@ -45,20 +45,24 @@ namespace QUIZTIME2._0
             InitializeComponent();
             question.Read(ID);
             btnUpdateImage.IsEnabled = false;
-
+            
 
             txbVraag.Text = question.vraag;
             long questionID = question.ID;
 
+            if (File.Exists(System.IO.Path.GetFullPath(@"../../img/question/" + questionID + ".jpg")))
+            {
+                BitmapImage image = new BitmapImage();
+                txbAfbeelding.Text = question.afbeelding;
+                string absolutePath = System.IO.Path.GetFullPath(@"../../img/question/" + questionID + ".jpg");
+                image.BeginInit();
+                image.UriSource = new Uri(absolutePath);
+                image.EndInit();
 
-            BitmapImage image = new BitmapImage();
-            txbAfbeelding.Text = question.afbeelding;
-            string absolutePath = System.IO.Path.GetFullPath(@"../../img/question/" + questionID + ".jpg");
-            image.BeginInit();
-            image.UriSource = new Uri(absolutePath);
-            image.EndInit();
+                imgQuestion.Source = image;
+            }
 
-            imgQuestion.Source = image;
+            
 
 
             txbAfbeelding.Visibility = Visibility.Hidden;
@@ -68,7 +72,6 @@ namespace QUIZTIME2._0
             btnCancel.Click += btnCancel_Click;
             _questoinID = ID;
             _quizID = quizID;
-            _getPath = absolutePath;
 
         }
 

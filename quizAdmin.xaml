@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QUIZTIME2._0"
         mc:Ignorable="d"
-        Title="quizAdmin" Height="450" Width="800">
+        Title="quizAdmin" Height="450" Width="800" Background="#FFD1F9EE">
     <Grid>
-        <Button Content="next" Name="btnNext" HorizontalAlignment="Left" Margin="304,235,0,0" VerticalAlignment="Top"/>
-
+        <Button Content="Volgende" Name="btnNext" HorizontalAlignment="Left" Margin="465,348,0,0" VerticalAlignment="Top"/>
+        <Button Content="Vorige" Name="btnBack" HorizontalAlignment="Left" Margin="270,348,0,0" VerticalAlignment="Top"/>
+        <Button Background="white" Content="Onthul het antwoord" Name="btnAntwoord" HorizontalAlignment="Center" Margin="0,202,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

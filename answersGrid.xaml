@@ -26,34 +26,15 @@
                     <DataGridTextColumn Binding="{Binding Path=Getal}" Header="Getal" Width="100" IsReadOnly="True" />
                     <DataGridTextColumn Binding="{Binding Path=Correct}" Header="Correct" Width="100" IsReadOnly="True" />
                     <DataGridTextColumn Binding="{Binding Path=tblvragen_id}" Header="tblvragen_id" Width="100" IsReadOnly="True" />
-
-                    <DataGridTemplateColumn Width="50">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button Content="edit"  Click="btnEdit_Click" />
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-
-                    <DataGridTemplateColumn Width="50">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button Content="Delete" Tag="{Binding Path=ID}" Click="btnDelete_Click" />
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-
-
-
-
-                </DataGrid.Columns>
+                </DataGrid.Columns> 
             </DataGrid>
-
-            <Button Name="btnAdd" Content="Add" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="439,397,0,0"/>
-            <Button Name="btnBack" Content="Back" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Margin="0,397,0,0"/>
+            
+            <Button Name="btnEdit" Content="Edit" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="359,397,0,0"/>
+            <Button Name="btnAdd" Content="Toevoegen" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="439,397,0,0"/>
+            <Button Name="btnBack" Content="Terug" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Margin="0,397,0,0"/>
 
         </Grid>
-        
+
         <Label Name="lblQuiz" Content="" FontSize="12pt" HorizontalAlignment="Left" Margin="11,5,0,0" VerticalAlignment="Top"/>
         <Label Name="lblAntwoord" Content="" FontSize="9pt" HorizontalAlignment="Left" Margin="204,8,0,0" VerticalAlignment="Top"/>
         <Label Content="Antwoorden" FontSize="14pt" FontWeight="bold" HorizontalAlignment="Left" Margin="11,27,0,0" VerticalAlignment="Top"/>
