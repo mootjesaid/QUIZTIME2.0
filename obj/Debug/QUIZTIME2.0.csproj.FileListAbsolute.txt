@@ -173,3 +173,5 @@ C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\ob
 C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\quizEnd.baml
 C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\AntwoordStart.g.cs
 C:\Users\Mohamed\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\AntwoordStart.baml
+C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\AntwoordStart.g.cs
+C:\Users\Gebruiker\OneDrive\Documenten\school\level 8\QUIZTIME2.0\QUIZTIME2.0\obj\Debug\AntwoordStart.baml

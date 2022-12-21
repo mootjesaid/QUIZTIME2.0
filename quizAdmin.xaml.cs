@@ -31,9 +31,15 @@ namespace QUIZTIME2._0
             InitializeComponent();
             btnNext.Click += BtnNext_Click;
             btnBack.Click += BtnBack_Click;
+            BtnTimer.Click += BtnTimer_Click;
             btnAntwoord.Click += BtnAntwoord_Click;
             _quizStart = quizStart;
             
+        }
+
+        private void BtnTimer_Click(object sender, RoutedEventArgs e)
+        {
+            _quizStart.startTimer();
         }
 
         private void BtnAntwoord_Click(object sender, RoutedEventArgs e)
@@ -50,6 +56,7 @@ namespace QUIZTIME2._0
         {
             _quizStart.NextQuestion();
         }
+
 
         
 

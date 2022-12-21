@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using System.Windows.Threading;
 
 namespace QUIZTIME2._0
 {
@@ -27,8 +28,10 @@ namespace QUIZTIME2._0
         private quizAdmin _quizAdmin;
         int _quizId;
         int row = 0;
-        
-        
+        DispatcherTimer timer;
+        TimeSpan time;
+
+
         public quizStart(Int32 quizID)
         {
             _quizId = quizID;
@@ -66,10 +69,31 @@ namespace QUIZTIME2._0
             lblC.Content = answer.antwoordC;
             lblD.Content = answer.antwoordD;
 
+            time = TimeSpan.FromSeconds(15);
 
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += Timer_Tick; ;
 
-           
+        }
 
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (time == TimeSpan.Zero)
+            {
+                timer.Stop();
+                MessageBox.Show("Time's up!");
+            }
+            else
+            {
+                time = time.Add(TimeSpan.FromSeconds(-1));
+                TimeLabel.Content = time.ToString("c");
+            }
+        }
+
+        public void startTimer()
+        {
+            timer.Start();
         }
 
         public void revealAnswer()

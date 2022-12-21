@@ -10,6 +10,7 @@
         <Button Content="Volgende" Name="btnNext" HorizontalAlignment="Left" Margin="465,348,0,0" VerticalAlignment="Top"/>
         <Button Content="Vorige" Name="btnBack" HorizontalAlignment="Left" Margin="270,348,0,0" VerticalAlignment="Top"/>
         <Button Background="white" Content="Onthul het antwoord" Name="btnAntwoord" HorizontalAlignment="Center" Margin="0,202,0,0" VerticalAlignment="Top"/>
+        <Button Content="Start timer" Name="BtnTimer" HorizontalAlignment="Left" Margin="400,273,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
